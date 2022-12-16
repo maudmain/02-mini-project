@@ -36,17 +36,17 @@ header p {
     text-align: center;
 }
 
-/* Flex container declaration */
-section {
-    display: grid;
-    gap: 20px 20px;
-    grid-template-rows: 500px 500px;
-    grid-template-columns: 500px 500px 500px;
+/* Grid container for section*/
+.grid-container {
+    display: inline-grid;
+    gap: 5px 5px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-evenly;
-    margin: 0 auto;
+
 }
 
-/* Code card styles */
+/* Card styles */
 /* Card flex properties, spacing and border */
 .card {
 
@@ -54,7 +54,8 @@ section {
     color: var(--heading-color);
     padding: 0 15px 15px;
     margin: 0 20px 40px;
-   
+
+
 }
 
 /* Card header styles, including position relative deflection */
@@ -64,12 +65,13 @@ section {
     border: 2px solid #fff;
     border-radius: 5px;
     position: relative;
-    top: -15px;
+    top: -30px;
     background-color: var(--background);
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
     font-family: var(--heading-font);
+    text-align: center;
 }
 
 /* Card paragraph styles */
@@ -83,7 +85,7 @@ section {
     color: #fff;
     border-radius: 5px;
     padding: 10px;
-    background: linear-gradient(180deg, #ed59a3, #d23282);
+    background: linear-gradient(#ed59a3, #d23282, #7D237f);
     font-size: 100%;
     white-space: pre-wrap;
     user-select: all;
@@ -92,15 +94,18 @@ section {
 /* END code card styles */
 
 /* Footer*/
+footer {
+    color: #fff;
 
-/* Setting transition timing and effect */
-.card,
-.card h2 {
-    transition: all 0.5s ease-in-out;
+
 }
 
-/* Setting mouse hover shadow animation */
-.card:hover,
-.card:hover h2 {
-    box-shadow: inset 0px 0px 8px var(--heading-color), 0 0 15px var(--heading-color);
+/* Card transition*/
+.card {
+    transition: all 1s ease-in-out;
+}
+
+/* User select function*/
+.card {
+    user-select: text;
 }
