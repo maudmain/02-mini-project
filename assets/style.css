@@ -37,23 +37,24 @@ header p {
 }
 
 /* Grid container for section*/
-.grid-container {
-    display: inline-grid;
-    gap: 5px 5px;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+.flex-container {
+    display: flex;
     justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
 
 }
 
 /* Card styles */
 /* Card flex properties, spacing and border */
 .card {
-
+    flex: 1 1 300px;
     border: 2px dashed #fff;
     color: var(--heading-color);
     padding: 0 15px 15px;
     margin: 0 20px 40px;
+    float: left;
 
 
 }
@@ -96,16 +97,55 @@ header p {
 /* Footer*/
 footer {
     color: #fff;
+    text-align: center;
 
 
 }
 
-/* Card transition*/
-.card {
-    transition: all 1s ease-in-out;
+/* Card transition glow*/
+.card .card-header {
+    border-radius: 8px;
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover,
+.card:hover .card-header {
+    box-shadow: inset 0px 0px 8px 
+    rgba(232, 102, 236, 1), 
+    0 0 15px 
+    rgba(232, 102, 236, 1);
 }
 
 /* User select function*/
 .card {
     user-select: text;
+}
+
+/* Media queries*/
+
+@media only screen and (max-width:991px) {
+    header {
+        position: relative;
+        margin: 20px
+    }
+
+    #flex-container {
+        grid-template-areas:
+            "card card"
+            "card card"
+            "card card";
+    }
+
+    .card {
+        grid-template-rows: 300px 300px 300px 300px 300px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "flexbox-row"
+            "flexbox-xcolumn"
+            "grid-layout"
+            "linear-gradiants"
+            "transition-glow"
+            "overlay-card-with-title"
+        ;
+    }
 }
